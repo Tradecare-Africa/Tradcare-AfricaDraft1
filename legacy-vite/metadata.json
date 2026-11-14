@@ -1,0 +1,8 @@
+{
+  "name": "Remix TradeCare Africa - Integrated Agri-Services Ecosystem",
+  "description": "Official website for TradeCare Africa, a women-led Kenyan agri-services company founded by Joyce Wambui Gema. Five integrated divisions: Train (TradeCare Academy), Produce (Zao Safi Hub), Digitise (FarmDataPod), Assure (React Cert Africa), and Connect (TradeCare Market).",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

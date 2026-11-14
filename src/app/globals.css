@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+/* TradeCare Africa brand palette mapped onto the design-system roles */
+@theme {
+  --font-sans: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #dd5c36;        /* Cherry Grove */
+  --color-primary-hover: #eb7857;
+  --color-primary-dark: #b33e20;   /* Cherry Grove 90% shade (brand palette) */
+  --color-primary-tint: #fde8e2;   /* Cherry Grove highlight */
+  --color-secondary: #327039;      /* Forest Fern */
+  --color-wheat: #f0be49;          /* Wheat Field Sunrise */
+  --color-ink: #133020;            /* Tilled Earth */
+  --color-ink-bg: #133020;         /* Tilled Earth */
+  --color-body: #3a4f41;
+  --color-body-light: #6a7e72;
+  --color-link-light: #f8edd9;     /* Alabaster Hay */
+  --color-cream: #faf7f2;
+  --color-line: #e5dfd3;
+  --color-focus: #dd5c36;
+
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* ── Service Ecosystem product palettes (from the proposal app, legacy-vite/src/data/tradecareData.ts).
+     Single source of truth for product colours. Components never hardcode these hexes:
+     wrap a product in `data-product="<slug>"` and use bg-product / text-product-ink / etc.
+     accent = identity colour (borders, icon strokes, decoration)
+     solid  = fill behind white text (≥ 4.5:1 with white, WCAG AA)
+     ink    = product-coloured text on white/tint (≥ 4.5:1)
+     tint   = light background (badges, icon chips, hover)                                    */
+  --color-academy: #012a4a;        /* Deep Azure: white 14.9:1 */
+  --color-academy-solid: #012a4a;
+  --color-academy-ink: #012a4a;
+  --color-academy-tint: #e3eef7;
+  --color-zaosafi: #076333;        /* La Salle Green: white 7.3:1 */
+  --color-zaosafi-solid: #076333;
+  --color-zaosafi-ink: #076333;
+  --color-zaosafi-tint: #fffce1;
+  --color-farmdatapod: #4c7338;    /* Turf Green: white 5.5:1, on tint 4.7:1 */
+  --color-farmdatapod-solid: #4c7338;
+  --color-farmdatapod-ink: #4c7338;
+  --color-farmdatapod-tint: #e6f0e3;
+  --color-tcert: #407e8c;          /* Teal: white 4.6:1, but 4.1:1 on tint → navy for text */
+  --color-tcert-solid: #407e8c;
+  --color-tcert-ink: #083a4f;
+  --color-tcert-tint: #e8f2f3;
+  --color-market: #dd5c36;         /* Cherry Grove: white only 3.7:1 → 90% shade for fills */
+  --color-market-solid: #b33e20;   /* white 5.8:1 */
+  --color-market-ink: #8c2b0e;
+  --color-market-tint: #fde8e2;
+}
+
+/* Generic product utilities resolved from the nearest [data-product] ancestor */
+@theme inline {
+  --color-product: var(--product, var(--color-primary));
+  --color-product-solid: var(--product-solid, var(--color-primary-dark));
+  --color-product-ink: var(--product-ink, var(--color-primary-dark));
+  --color-product-tint: var(--product-tint, var(--color-primary-tint));
+}
+
+[data-product='academy'] { --product: var(--color-academy); --product-solid: var(--color-academy-solid); --product-ink: var(--color-academy-ink); --product-tint: var(--color-academy-tint); }
+[data-product='zaosafi'] { --product: var(--color-zaosafi); --product-solid: var(--color-zaosafi-solid); --product-ink: var(--color-zaosafi-ink); --product-tint: var(--color-zaosafi-tint); }
+[data-product='farmdatapod'] { --product: var(--color-farmdatapod); --product-solid: var(--color-farmdatapod-solid); --product-ink: var(--color-farmdatapod-ink); --product-tint: var(--color-farmdatapod-tint); }
+[data-product='tcert'] { --product: var(--color-tcert); --product-solid: var(--color-tcert-solid); --product-ink: var(--color-tcert-ink); --product-tint: var(--color-tcert-tint); }
+[data-product='market'] { --product: var(--color-market); --product-solid: var(--color-market-solid); --product-ink: var(--color-market-ink); --product-tint: var(--color-market-tint); }
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    overflow-x: clip;
+  }
+  img, video {
+    max-width: 100%;
+  }
+  body {
+    @apply bg-cream font-sans leading-relaxed text-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-extrabold tracking-tight text-ink;
+  }
+  h2 {
+    font-size: clamp(1.625rem, 1.2rem + 1.8vw, 2.25rem);
+    line-height: 1.2;
+  }
+  :focus-visible {
+    outline: 1px solid var(--color-focus);
+  }
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+  ::selection {
+    @apply bg-primary text-white;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .section {
+    @apply py-16 lg:py-24;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3.5 text-sm font-bold tracking-wide text-white uppercase transition hover:bg-primary-hover;
+  }
+  .eyebrow {
+    @apply mb-3 block text-xs font-bold tracking-[0.05em] text-primary uppercase;
+  }
+  .prose-site p {
+    @apply mb-5 leading-relaxed;
+  }
+  .prose-site h3,
+  .prose-site h4 {
+    @apply mt-8 mb-4 text-xl;
+  }
+  .prose-site ul {
+    @apply mb-5 list-disc space-y-2 pl-6;
+  }
+  .prose-site ol {
+    @apply mb-5 list-decimal space-y-2 pl-6;
+  }
+  .card {
+    @apply rounded-lg bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl;
+  }
+  /* Product-themed button: needs a [data-product] ancestor */
+  .btn-product {
+    @apply inline-flex min-h-11 items-center justify-center rounded-lg bg-product-solid px-7 py-3.5 text-sm font-bold tracking-wide text-white uppercase transition hover:brightness-110;
+  }
+}
