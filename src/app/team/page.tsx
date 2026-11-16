@@ -2,7 +2,6 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import { TEAM_MEMBERS } from '@/data/tradecareData';
 import { WIDER_TEAM } from '@/data/companyContent';
-import { IMG } from '@/lib/site';
 import { PageHeader } from '@/components/PageHeader';
 import { SectionTitle } from '@/components/SectionTitle';
 
@@ -11,7 +10,7 @@ export const metadata: Metadata = { title: 'Team' };
 export default function TeamPage() {
   return (
     <>
-      <PageHeader title="Leadership & Service Ecosystem Leads" image={IMG.academy} />
+      <PageHeader title="Leadership & Service Ecosystem Leads" image="/images/african-agriculture/nigeria-crop-inspection.jpg" />
       <section className="section">
         <div className="container-site">
           <SectionTitle center eyebrow="Our Team" title="One accountable control tower" />

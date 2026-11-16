@@ -87,7 +87,6 @@ export const NAV: NavItem[] = [
       { label: 'Our Partners & Network', href: '/about#partners' },
     ],
   },
-  { label: 'Founder', href: '/founder' },
   {
     label: 'Service Ecosystem',
     href: ECOSYSTEM_PATH,
@@ -98,6 +97,7 @@ export const NAV: NavItem[] = [
     href: '/projects',
     children: projectList.map((p) => ({ label: p.title, href: p.href })),
   },
+  { label: 'Founder', href: '/founder' },
   { label: 'Team', href: '/team' },
   { label: 'Contact', href: '/contact' },
 ];

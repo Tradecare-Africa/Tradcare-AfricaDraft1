@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { Mail, MapPin, Navigation, Phone, ShieldCheck } from 'lucide-react';
-import { IMG, LOCATION, SITE } from '@/lib/site';
+import { LOCATION, SITE } from '@/lib/site';
 import { PageHeader } from '@/components/PageHeader';
 import { ContactForm } from '@/components/ContactForm';
 import { CONTACT_EXTRA } from '@/data/companyContent';
@@ -17,7 +17,7 @@ export default function ContactPage() {
   ];
   return (
     <>
-      <PageHeader title="Contact Us" image={IMG.market} />
+      <PageHeader title="Contact Us" image="/images/african-agriculture/nigerian-tomato-farmer.jpg" />
       <section className="section">
         <div className="container-site grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
           <div>

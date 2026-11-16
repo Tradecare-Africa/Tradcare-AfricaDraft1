@@ -14,7 +14,7 @@ export const metadata: Metadata = { title: 'About' };
 export default function AboutPage() {
   return (
     <>
-      <PageHeader title="About TradeCare Africa" />
+      <PageHeader title="About TradeCare Africa" image="/images/african-agriculture/african-field-worker.jpg" />
       <section className="section">
         <div className="container-site grid gap-12 lg:grid-cols-[minmax(0,1fr)_340px]">
           <div>

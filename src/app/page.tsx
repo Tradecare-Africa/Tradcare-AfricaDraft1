@@ -62,7 +62,7 @@ export default function HomePage() {
           <div className="relative pb-16 pl-4 sm:pl-6 lg:pr-16">
             <div aria-hidden="true" className="absolute -top-6 left-0 h-32 w-32 rounded-lg bg-primary/10 sm:h-48 sm:w-48" />
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
-              <Image quality={90} src={IMG.academy} alt="TradeCare Academy field agronomy training with smallholder farmers in an avocado orchard"
+              <Image quality={90} src={IMG.academy} alt="African woman tending crops in a fertile field beneath a mountain"
                 fill sizes="(min-width:1024px) 45vw, 100vw" className="object-cover" />
             </div>
             <div className="absolute right-0 bottom-0 aspect-square w-2/5 overflow-hidden rounded-lg border-8 border-white shadow-lg">
@@ -158,7 +158,7 @@ export default function HomePage() {
 
       {/* CTA band */}
       <section className="relative overflow-hidden bg-ink-bg py-24 lg:py-32">
-        <Image quality={90} src={IMG.market} alt="" fill sizes="100vw" className="object-cover opacity-30" />
+        <Image quality={90} src="/images/african-agriculture/nigeria-tomato-harvest.jpg" alt="" fill sizes="100vw" className="object-cover opacity-50" />
         <div className="container-site relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
           <h2 className="max-w-3xl text-[clamp(1.75rem,1.2rem+2.6vw,3rem)] text-white">
             Farmers keep their land and their crop. We assemble the <span className="text-primary">whole chain</span> around them.
@@ -171,7 +171,7 @@ export default function HomePage() {
       <section className="section">
         <div className="container-site grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="relative aspect-[4/3] sm:aspect-[4/5] overflow-hidden rounded-lg shadow-lg">
-            <Image quality={90} src={IMG.tcert} alt="TCert quality assurance inspector verifying export produce and certifying standards in a modern packhouse"
+            <Image quality={90} src={IMG.tcert} alt="Vendor sorting onions at an outdoor market in Maiduguri, Nigeria"
               fill sizes="(min-width:1024px) 45vw, 100vw" className="object-cover" />
           </div>
           <div>

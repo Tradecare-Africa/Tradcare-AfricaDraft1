@@ -3,12 +3,22 @@ import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
 import { IMG } from '@/lib/site';
 
-export function PageHeader({ title, image = IMG.hero, crumbs = [] }: {
-  title: string; image?: string; crumbs?: { label: string; href?: string }[];
+export function PageHeader({ title, image = IMG.hero, imageLayout = 'cover', crumbs = [] }: {
+  title: string;
+  image?: string;
+  imageLayout?: 'cover' | 'portrait';
+  crumbs?: { label: string; href?: string }[];
 }) {
   return (
     <section className="relative overflow-hidden bg-ink-bg py-16 sm:py-24 lg:py-32">
-      <Image quality={90} src={image} alt="" fill priority sizes="100vw" className="object-cover opacity-40" />
+      {imageLayout === 'portrait' ? (
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/2 sm:w-2/5 lg:w-1/3">
+          <Image quality={90} src={image} alt="" fill priority sizes="(min-width:1024px) 33vw, 50vw" className="object-contain object-right" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink-bg via-ink-bg/40 to-transparent" />
+        </div>
+      ) : (
+        <Image quality={90} src={image} alt="" fill priority sizes="100vw" className="object-cover opacity-60" />
+      )}
       <div className="container-site relative">
         <nav aria-label="Breadcrumb" className="mb-4 text-sm text-link-light">
           <ol className="flex flex-wrap items-center gap-1.5">

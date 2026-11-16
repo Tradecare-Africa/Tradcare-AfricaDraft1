@@ -24,7 +24,7 @@ export default function FounderPage() {
   const f = FOUNDER_DATA;
   return (
     <>
-      <PageHeader title="Our Founder" image={IMG.academy} />
+      <PageHeader title="Our Founder" image={IMG.founder} imageLayout="portrait" />
 
       <section className="section">
         <div className="container-site grid items-start gap-12 lg:grid-cols-12">
