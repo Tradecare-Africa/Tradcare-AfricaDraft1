@@ -1043,7 +1043,7 @@ export const DIVISIONS: Division[] = [
 
 export const FOUNDER_DATA = {
   name: 'Joyce Wambui Gema',
-  role: 'Founder & Managing Director',
+  role: 'Founder & CEO',
   foundedYear: 2014,
   companyName: 'TradeCare Africa Limited',
   award: 'Agricultural Consultancy Award 2023',
@@ -1219,9 +1219,9 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 'joyce-gema',
     name: 'Joyce Wambui Gema',
-    role: 'Founder & Managing Director',
+    role: 'Founder & CEO',
     divisionName: 'TradeCare Africa Limited',
-    verb: 'LEAD',
+    verb: 'CEO',
     brandColor: '#DD5C36',
     accentBg: '#FDE8E2',
     textColor: '#133020',
@@ -1242,7 +1242,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
       label: `Proven operating track record since ${FOUNDED_YEAR}`
     },
     image: '/images/team/1.png',
-    imageAlt: 'Joyce Wambui Gema, Founder and Managing Director of TradeCare Africa',
+    imageAlt: 'Joyce Wambui Gema, Founder and CEO of TradeCare Africa',
     isFounder: true
   },
   {

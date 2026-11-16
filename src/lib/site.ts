@@ -87,6 +87,7 @@ export const NAV: NavItem[] = [
       { label: 'Our Partners & Network', href: '/about#partners' },
     ],
   },
+  { label: 'Founder', href: '/founder' },
   {
     label: 'Service Ecosystem',
     href: ECOSYSTEM_PATH,

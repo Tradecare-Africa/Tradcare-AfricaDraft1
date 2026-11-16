@@ -8,7 +8,7 @@ export function PageHeader({ title, image = IMG.hero, crumbs = [] }: {
 }) {
   return (
     <section className="relative overflow-hidden bg-ink-bg py-16 sm:py-24 lg:py-32">
-      <Image src={image} alt="" fill priority sizes="100vw" className="object-cover opacity-40" />
+      <Image quality={90} src={image} alt="" fill priority sizes="100vw" className="object-cover opacity-40" />
       <div className="container-site relative">
         <nav aria-label="Breadcrumb" className="mb-4 text-sm text-link-light">
           <ol className="flex flex-wrap items-center gap-1.5">

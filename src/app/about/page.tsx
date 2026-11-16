@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
-import { Check, X } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight, Check, X } from 'lucide-react';
 import { COMPETITOR_COMPARISON, FOUNDER_DATA, MARKET_DATA } from '@/data/tradecareData';
-import { IMG } from '@/lib/site';
+import { SITE } from '@/lib/site';
 import { CONSULTING_SERVICES, MISSION, NUTRITION_GARDEN_PHOTOS, RESEARCH_PORTFOLIO, PARTNER_NETWORK, PARTNER_NETWORK_INTRO, TRACK_RECORD, WHY_CHOOSE_US, WHY_CHOOSE_US_INTRO } from '@/data/companyContent';
 import { PageHeader } from '@/components/PageHeader';
 import { ServicesSidebar } from '@/components/ServicesSidebar';
@@ -17,18 +18,19 @@ export default function AboutPage() {
       <section className="section">
         <div className="container-site grid gap-12 lg:grid-cols-[minmax(0,1fr)_340px]">
           <div>
-            <span className="eyebrow">Founder & Leadership</span>
-            <h2 className="mb-6">{FOUNDER_DATA.name}</h2>
-            <div className="relative mb-8 aspect-[16/9] overflow-hidden rounded-lg shadow-lg">
-              <Image src={IMG.founder} alt="Joyce Wambui Gema, Founder and CEO of TradeCare Africa" fill sizes="(min-width:1024px) 60vw, 100vw" className="object-cover" />
-            </div>
+            <span className="eyebrow">Who We Are</span>
+            <h2 className="mb-6">{SITE.tagline}</h2>
             <div className="prose-site">
-              <p className="text-xs font-bold text-primary uppercase">{FOUNDER_DATA.role} · Founded {FOUNDER_DATA.foundedYear} · {FOUNDER_DATA.award}</p>
-              {FOUNDER_DATA.biography.map((p) => <p key={p}>{p}</p>)}
-              <p className="border-l-4 border-primary pl-5 font-medium text-ink italic">“{FOUNDER_DATA.quote}”</p>
-              <h3>Key achievements</h3>
-              <ul>{FOUNDER_DATA.keyAchievements.map((a) => <li key={a}>{a}</li>)}</ul>
+              <p>{SITE.description}</p>
+              <p>{WHY_CHOOSE_US_INTRO}</p>
             </div>
+            <Link href="/founder" className="card mt-8 flex items-center justify-between gap-4 p-5 transition hover:border-primary">
+              <span>
+                <span className="eyebrow">Our Founder</span>
+                <span className="block font-bold text-ink">Meet {FOUNDER_DATA.name}, {FOUNDER_DATA.role}</span>
+              </span>
+              <ArrowRight className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+            </Link>
           </div>
           <ServicesSidebar />
         </div>
@@ -133,7 +135,7 @@ export default function AboutPage() {
           <div className="mt-10 grid grid-cols-3 gap-3 sm:grid-cols-6">
             {NUTRITION_GARDEN_PHOTOS.map((src, i) => (
               <div key={src} className="relative aspect-square overflow-hidden rounded-lg">
-                <Image src={src} alt={`Agri-nutrition garden ${i + 1}`} fill sizes="(min-width:640px) 16vw, 33vw" className="object-cover" />
+                <Image quality={90} src={src} alt={`Agri-nutrition garden ${i + 1}`} fill sizes="(min-width:640px) 16vw, 33vw" className="object-cover" />
               </div>
             ))}
           </div>
@@ -173,7 +175,7 @@ export default function AboutPage() {
             {PARTNER_NETWORK.map((s) => (
               <article key={s.name} className="card overflow-hidden">
                 <div className="relative aspect-[16/9] bg-white">
-                  <Image src={s.image} alt={s.name} fill sizes="(min-width:768px) 50vw, 100vw" className="object-contain" />
+                  <Image quality={90} src={s.image} alt={s.name} fill sizes="(min-width:768px) 50vw, 100vw" className="object-contain" />
                 </div>
                 <div className="p-5 sm:p-8">
                   <span className="eyebrow">{s.role}</span>

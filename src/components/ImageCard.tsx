@@ -13,9 +13,9 @@ export function ImageCard({ href, image, imageAlt = '', kicker, title, text, cta
   const themed = Boolean(product);
   return (
     <article {...(product ? productTheme(product) : {})}
-      className={`card group flex h-full flex-col overflow-hidden ${themed ? 'border-t-4 border-product' : ''}`}>
+      className="card group flex h-full flex-col overflow-hidden">
       <div className="relative aspect-[16/10] overflow-hidden">
-        <Image src={image} alt={imageAlt} fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
+        <Image quality={90} src={image} alt={imageAlt} fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
           className="object-cover transition duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100" />
       </div>
       <div className="flex flex-1 flex-col p-5 sm:p-6">

@@ -67,7 +67,7 @@ export function HeroSlider({ slides, interval = 5000 }: { slides: Slide[]; inter
             aria-hidden={!active} inert={!active}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out motion-reduce:transition-none ${active ? 'z-10 opacity-100' : 'z-0 opacity-0'}`}>
             {/* Hero images load eagerly; only the first is high priority (LCP). */}
-            <Image src={s.image} alt={s.alt} fill priority={i === 0} loading={i === 0 ? undefined : 'eager'}
+            <Image quality={90} src={s.image} alt={s.alt} fill priority={i === 0} loading={i === 0 ? undefined : 'eager'}
               fetchPriority={i === 0 ? 'high' : 'low'} sizes="100vw" className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20 sm:to-transparent" />
             <div className="container-site relative flex h-full items-center pb-24 sm:pb-20">

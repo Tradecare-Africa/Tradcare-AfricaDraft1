@@ -11,7 +11,7 @@ export function Footer() {
       <div className="container-site grid gap-10 py-12 sm:grid-cols-2 sm:py-16 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
           <Link href="/" aria-label={`${SITE.name} home`} className="inline-block">
-            <Image src={SITE.logoLight} alt={SITE.name} width={640} height={254} className="mb-5 h-16 w-auto" />
+            <Image quality={90} src={SITE.logoLight} alt={SITE.name} width={640} height={254} className="mb-5 h-16 w-auto" />
           </Link>
           <p className="mb-5 text-sm">{SITE.description}</p>
           <Socials size="md" />

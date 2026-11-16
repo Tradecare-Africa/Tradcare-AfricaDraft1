@@ -62,11 +62,11 @@ export default function HomePage() {
           <div className="relative pb-16 pl-4 sm:pl-6 lg:pr-16">
             <div aria-hidden="true" className="absolute -top-6 left-0 h-32 w-32 rounded-lg bg-primary/10 sm:h-48 sm:w-48" />
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
-              <Image src={IMG.academy} alt="TradeCare Academy field agronomy training with smallholder farmers in an avocado orchard"
+              <Image quality={90} src={IMG.academy} alt="TradeCare Academy field agronomy training with smallholder farmers in an avocado orchard"
                 fill sizes="(min-width:1024px) 45vw, 100vw" className="object-cover" />
             </div>
             <div className="absolute right-0 bottom-0 aspect-square w-2/5 overflow-hidden rounded-lg border-8 border-white shadow-lg">
-              <Image src={IMG.founder} alt="Joyce Wambui Gema, Founder and CEO of TradeCare Africa" fill sizes="(min-width:1024px) 20vw, 40vw" className="object-cover" />
+              <Image quality={90} src={IMG.founder} alt="Joyce Wambui Gema, Founder and CEO of TradeCare Africa" fill sizes="(min-width:1024px) 20vw, 40vw" className="object-cover" />
             </div>
             {/* Company guideline is a PDF document, not a video: opens in a new tab (browser PDF viewer, with download). */}
             <a href={SITE.downloads[0].href} target="_blank" rel="noopener" type="application/pdf"
@@ -107,7 +107,7 @@ export default function HomePage() {
               const Icon = PRODUCT_ICONS[d.slug];
               return (
                 <article key={d.slug} {...productTheme(d.slug)}
-                  className="card group relative flex flex-col border-t-4 border-product bg-white p-6 hover:shadow-xl sm:p-8">
+                  className="card group relative flex flex-col bg-white p-6 hover:shadow-xl sm:p-8">
                   <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-lg bg-product-tint text-product-ink transition group-hover:bg-product-solid group-hover:text-white">
                     <Icon className="h-8 w-8" aria-hidden="true" />
                   </div>
@@ -131,7 +131,7 @@ export default function HomePage() {
       {/* Stats band */}
       <div className="container-site relative z-10 -mt-16">
         <div className="relative overflow-hidden rounded-lg bg-primary px-6 py-10 shadow-xl sm:px-8 sm:py-12">
-          <Image src={IMG.hero} alt="" fill sizes="100vw" className="object-cover opacity-10 mix-blend-multiply" />
+          <Image quality={90} src={IMG.hero} alt="" fill sizes="100vw" className="object-cover opacity-10 mix-blend-multiply" />
           <dl className="relative grid gap-10 text-center sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((s) => (
               <div key={s.label}>
@@ -158,7 +158,7 @@ export default function HomePage() {
 
       {/* CTA band */}
       <section className="relative overflow-hidden bg-ink-bg py-24 lg:py-32">
-        <Image src={IMG.market} alt="" fill sizes="100vw" className="object-cover opacity-30" />
+        <Image quality={90} src={IMG.market} alt="" fill sizes="100vw" className="object-cover opacity-30" />
         <div className="container-site relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
           <h2 className="max-w-3xl text-[clamp(1.75rem,1.2rem+2.6vw,3rem)] text-white">
             Farmers keep their land and their crop. We assemble the <span className="text-primary">whole chain</span> around them.
@@ -171,7 +171,7 @@ export default function HomePage() {
       <section className="section">
         <div className="container-site grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="relative aspect-[4/3] sm:aspect-[4/5] overflow-hidden rounded-lg shadow-lg">
-            <Image src={IMG.tcert} alt="TCert quality assurance inspector verifying export produce and certifying standards in a modern packhouse"
+            <Image quality={90} src={IMG.tcert} alt="TCert quality assurance inspector verifying export produce and certifying standards in a modern packhouse"
               fill sizes="(min-width:1024px) 45vw, 100vw" className="object-cover" />
           </div>
           <div>

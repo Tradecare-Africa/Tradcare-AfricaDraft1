@@ -46,7 +46,7 @@ export function Header() {
       {/* Main nav */}
       <div className="container-site flex h-16 items-center sm:h-20 justify-between gap-6">
         <Link href="/" aria-label={`${SITE.name} home`} className="shrink-0">
-          <Image src={SITE.logo} alt={SITE.name} width={318} height={158} priority className="h-10 w-auto sm:h-12" />
+          <Image quality={90} src={SITE.logo} alt={SITE.name} width={318} height={158} priority className="h-10 w-auto sm:h-12" />
         </Link>
 
         <nav aria-label="Main" className="hidden h-full lg:block">
@@ -99,7 +99,7 @@ export function Header() {
         <div role="dialog" aria-modal="true" aria-label="Menu"
           className={`absolute inset-y-0 left-0 flex w-80 max-w-[85vw] flex-col overflow-y-auto bg-ink-bg text-link-light transition-transform duration-300 ${open ? 'translate-x-0' : '-translate-x-full'}`}>
           <div className="flex items-center justify-between border-b border-white/10 p-5">
-            <Image src={SITE.logoLight} alt={SITE.name} width={640} height={254} className="h-10 w-auto" />
+            <Image quality={90} src={SITE.logoLight} alt={SITE.name} width={640} height={254} className="h-10 w-auto" />
             <button type="button" onClick={() => setOpen(false)} aria-label="Close menu" tabIndex={open ? 0 : -1}
               className="flex h-11 w-11 items-center justify-center rounded-md transition hover:text-white">
               <X className="h-6 w-6" />

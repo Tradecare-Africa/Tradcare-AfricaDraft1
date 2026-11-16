@@ -14,7 +14,7 @@ export function Socials({ size = 'sm' }: { size?: 'sm' | 'md' }) {
   const icon = size === 'sm' ? 'h-3.5 w-3.5' : 'h-4 w-4';
   return (
     <ul className="flex items-center gap-2">
-      {SITE.socials.map((s) => (
+      {SITE.socials.filter((s) => s.href !== '#').map((s) => (
         <li key={s.label}>
           <a
             href={s.href}

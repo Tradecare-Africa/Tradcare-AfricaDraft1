@@ -16,7 +16,7 @@ export function ServicesSidebar({ active }: { active?: string }) {
                 <Link
                   href={d.href}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`flex min-h-11 items-center justify-between rounded-md border-l-4 border-product px-4 py-3 text-sm font-bold transition ${
+                  className={`flex min-h-11 items-center justify-between rounded-md px-4 py-3 text-sm font-bold transition ${
                     isActive ? 'bg-product-solid text-white' : 'bg-cream text-ink hover:bg-product-tint hover:text-product-ink'
                   }`}
                 >
